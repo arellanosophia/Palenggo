@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Palenggo</string>
+    <string name="serv">TextView</string>
+    <string name="recipeName">TextView</string>
+    <string name="prepTime">TextView</string>
+    <string name="prepTimeIcon">TODO</string>
+    <string name="textView1">Prep. Time:</string>
+    <string name="tTimeIcon">TODO</string>
 </resources>
