@@ -18,15 +18,14 @@ class ViewRecipeListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_view_recipe_list)
 
         val gridView = findViewById<GridView>(R.id.gridView)
         //val imageView = findViewById<ImageView>(R.id.imgView)
-        val mainAdapter = MainAdapter(this , recipeNames , recipeImages)
+        val mainAdapter = RecipeAdapter(this , recipeNames , recipeImages)
         gridView.adapter = mainAdapter
         gridView.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, id ->
-            Toast.makeText(applicationContext, "You CLicked " + recipeNames[+position],
-                Toast.LENGTH_SHORT).show()
+
             val intent = Intent(this, RecipeDetailsActivity::class.java)
             intent.putExtra("position", recipeNames[position])
             startActivity(intent)

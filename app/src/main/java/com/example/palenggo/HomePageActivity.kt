@@ -25,6 +25,8 @@ class HomePageActivity : AppCompatActivity() {
                 true
             }
             R.id.go_to_recipes -> {
+                val intent = Intent(this , ViewRecipeListActivity::class.java)
+                startActivity(intent)
                 true
             }
             R.id.go_to_products -> {

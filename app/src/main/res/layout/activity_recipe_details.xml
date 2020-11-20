@@ -32,10 +32,11 @@
         android:id="@+id/recipeName"
         android:layout_width="410dp"
         android:layout_height="42dp"
+        android:fontFamily="sans-serif-black"
         android:gravity="center"
         android:text="@string/recipeName"
         android:textSize="30sp"
-        android:textStyle="bold|italic"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recipeImage" />
@@ -150,9 +151,11 @@
         android:layout_height="34dp"
         android:layout_marginTop="8dp"
         android:contentDescription="TODO"
+        app:layout_constraintEnd_toStartOf="@+id/srvTxt"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/totalTime"
         app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:srcCompat="@drawable/ic_round_people_24"
-        tools:layout_editor_absoluteX="212dp" />
+        app:srcCompat="@drawable/ic_round_people_24" />
 
     <ImageView
         android:id="@+id/imageView3"

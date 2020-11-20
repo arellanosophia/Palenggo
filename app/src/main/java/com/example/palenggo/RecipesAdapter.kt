@@ -8,7 +8,7 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.TextView
 
-internal class MainAdapter(
+internal class RecipeAdapter(
     private val context: Context,
     private val numbersInWords: Array<String>,
     private val numberImage: IntArray
