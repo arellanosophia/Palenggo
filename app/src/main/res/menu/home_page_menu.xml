@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/go_to_cart"
+        android:icon="@drawable/ic_outline_shopping_cart_24"
+        android:title="Cart"
+        app:showAsAction="ifRoom"></item>
+    <item
+        android:id="@+id/go_to_recipes"
+        android:icon="@drawable/ic_outline_fastfood_24"
+        android:title="Food Recipes"
+        app:showAsAction="ifRoom"></item>
+    <item
+        android:id="@+id/go_to_products"
+        android:icon="@drawable/ic_outline_shopping_bag_24"
+        android:title="Buy Goods"></item>
+    <item
+        android:id="@+id/go_to_bills"
+        android:icon="@drawable/ic_outline_attach_money_24"
+        android:title="Pay Bills"></item>
+
+</menu>
