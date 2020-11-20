@@ -35,6 +35,8 @@ class HomePageActivity : AppCompatActivity() {
                 true
             }
             R.id.go_to_bills -> {
+                val intent = Intent(this ,  PayBillsPage::class.java)
+                startActivity(intent)
                 true
             }
             else -> {
