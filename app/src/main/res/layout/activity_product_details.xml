@@ -21,9 +21,9 @@
         android:id="@+id/imageView7"
         android:layout_width="412dp"
         android:layout_height="515dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/productImageView"
         app:srcCompat="@drawable/details_background" />
@@ -60,14 +60,13 @@
         android:id="@+id/productPriceTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="84dp"
         android:fontFamily="sans-serif-black"
-        android:text="Php 20.00"
+        android:text="20"
         android:textColor="#000000"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.83"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/productQuantityTextView" />
 
     <TextView
@@ -132,5 +131,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/productPriceTextView"
         app:srcCompat="@drawable/heart" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Php"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toStartOf="@+id/productPriceTextView"
+        app:layout_constraintHorizontal_bias="0.968"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quantitySeekBar" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-black"
+        android:text=".00"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        app:layout_constraintStart_toEndOf="@+id/productPriceTextView"
+        app:layout_constraintTop_toBottomOf="@+id/quantitySeekBar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,5 @@
 package com.example.palenggo
 
-import android.R.attr.key
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -8,93 +7,173 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import com.example.palenggo.handlers.PalenggoHandler
+import com.example.palenggo.models.Cart
 
 var addedToCart = arrayListOf<String>()
 
 class ProductDetailsActivity : AppCompatActivity() {
+
+    lateinit var productImage : ImageView
+    lateinit var productName : TextView
+    lateinit var productUnit : TextView
+    lateinit var productQuantity : TextView
+    lateinit var productPrice : TextView
+    lateinit var palenggoHandler: PalenggoHandler
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product_details)
 
         val position = intent.extras!!.getString("position")
-        val productImage = findViewById<ImageView>(R.id.productImageView)
-        val productName = findViewById<TextView>(R.id.productNameTextView)
-        val productQuantity = findViewById<TextView>(R.id.productQuantityTextView)
-        findViewById<SeekBar>(R.id.quantitySeekBar).setOnSeekBarChangeListener(object :
-            SeekBar.OnSeekBarChangeListener {
-            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-                val quantity = findViewById<TextView>(R.id.quantityNumber) as TextView
-                quantity.text = progress.toString()
-            }
+        productImage = findViewById(R.id.productImageView)
+        productName = findViewById(R.id.productNameTextView)
+        productUnit = findViewById(R.id.productQuantityTextView)
+        productQuantity = findViewById(R.id.quantityNumber)
+        productPrice = findViewById(R.id.productPriceTextView)
+        palenggoHandler = PalenggoHandler()
 
-            override fun onStartTrackingTouch(seekBar: SeekBar?) {
-            }
-
-            override fun onStopTrackingTouch(seekBar: SeekBar?) {
-            }
-
-        })
-        val productPrice = findViewById<TextView>(R.id.productPriceTextView)
 
 //FRUITS SECTION
         when {
             position.equals("Apple") -> {
+                productPrice.text = "40"
                 productImage.setImageResource(R.drawable.apple2)
                 productName.text = position
-                productQuantity.text = "1 pc (100- 120 grams)"
-                productPrice.text = "Php 20.00"
-                findViewById<Button>(R.id.addToCartButton).setOnClickListener{
-                    Toast.makeText(this, "Added To Cart", Toast.LENGTH_SHORT).show()
-                    addedToCart.add(position.toString())
-                }
+                productUnit.text = "1 pc (100- 120 grams)"
 
+                findViewById<SeekBar>(R.id.quantitySeekBar).setOnSeekBarChangeListener(object :
+                    SeekBar.OnSeekBarChangeListener {
+                    override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                        productQuantity.text = progress.toString().toInt().toString()
+
+                        val product_quantity = productQuantity.text.toString().toInt()
+                        val product_price = productPrice.text.toString().toInt()
+
+                        findViewById<Button>(R.id.addToCartButton).setOnClickListener{
+                            val cart = Cart(product_name = position, product_quantity = product_quantity, product_price = product_price)
+                            if (palenggoHandler.addItem(cart)) {
+                                Toast.makeText(applicationContext , "Added To Cart", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                    }
+                    override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                    }
+                    override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                    }
+                })
             }
             position.equals("Banana") -> {
+                productPrice.text = "80"
                 productImage.setImageResource(R.drawable.banana2)
                 productName.text = position
-                productQuantity.text = "1 branch (800 grams - 1 kg)"
-                productPrice.text = "Php 80.00"
-                findViewById<Button>(R.id.addToCartButton).setOnClickListener{
-                    Toast.makeText(this, "Added To Cart", Toast.LENGTH_SHORT).show()
-                    addedToCart.add(position.toString())
-                }
+                productUnit.text = "1 branch (800 grams - 1 kg)"
+
+                findViewById<SeekBar>(R.id.quantitySeekBar).setOnSeekBarChangeListener(object :
+                    SeekBar.OnSeekBarChangeListener {
+                    override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                        productQuantity.text = progress.toString().toInt().toString()
+
+                        val product_quantity = productQuantity.text.toString().toInt()
+                        val product_price = productPrice.text.toString().toInt()
+
+                        findViewById<Button>(R.id.addToCartButton).setOnClickListener{
+                            val cart = Cart(product_name = position, product_quantity = product_quantity, product_price = product_price)
+                            if (palenggoHandler.addItem(cart)) {
+                                Toast.makeText(applicationContext , "Added To Cart", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                    }
+                    override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                    }
+                    override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                    }
+                })
             }
             position.equals("Mango") -> {
+                productPrice.text = "30"
                 productImage.setImageResource(R.drawable.mango2)
                 productName.text = position
-                productQuantity.text = "1 pc (100 - 200 grams)"
-                productPrice.text = "Php 30.00"
-                findViewById<Button>(R.id.addToCartButton).setOnClickListener{
-                    Toast.makeText(this, "Added To Cart", Toast.LENGTH_SHORT).show()
-                    addedToCart.add(position.toString())
-                }
+                productUnit.text = "1 pc (100 - 200 grams)"
+
+                findViewById<SeekBar>(R.id.quantitySeekBar).setOnSeekBarChangeListener(object :
+                    SeekBar.OnSeekBarChangeListener {
+                    override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                        productQuantity.text = progress.toString().toInt().toString()
+
+                        val product_quantity = productQuantity.text.toString().toInt()
+                        val product_price = productPrice.text.toString().toInt()
+
+                        findViewById<Button>(R.id.addToCartButton).setOnClickListener{
+                            val cart = Cart(product_name = position, product_quantity = product_quantity, product_price = product_price)
+                            if (palenggoHandler.addItem(cart)) {
+                                Toast.makeText(applicationContext , "Added To Cart", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                    }
+                    override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                    }
+                    override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                    }
+                })
             }
             position.equals("Mangosteen") -> {
                 productImage.setImageResource(R.drawable.mangosteen2)
                 productName.text = position
                 productQuantity.text = "3 pcs (300 - 450 grams)"
-                productPrice.text = "Php 50.00"
-                findViewById<Button>(R.id.addToCartButton).setOnClickListener{
-                    Toast.makeText(this, "Added To Cart", Toast.LENGTH_SHORT).show()
-                    addedToCart.add(position.toString())
-                }
+                productPrice.text = "50"
+                findViewById<SeekBar>(R.id.quantitySeekBar).setOnSeekBarChangeListener(object :
+                    SeekBar.OnSeekBarChangeListener {
+                    override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                        productQuantity.text = progress.toString().toInt().toString()
+
+                        val product_quantity = productQuantity.text.toString().toInt()
+                        val product_price = productPrice.text.toString().toInt()
+
+                        findViewById<Button>(R.id.addToCartButton).setOnClickListener{
+                            val cart = Cart(product_name = position, product_quantity = product_quantity, product_price = product_price)
+                            if (palenggoHandler.addItem(cart)) {
+                                Toast.makeText(applicationContext , "Added To Cart", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                    }
+                    override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                    }
+                    override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                    }
+                })
             }
             position.equals("Orange") -> {
                 productImage.setImageResource(R.drawable.orange2)
                 productName.text = position
                 productQuantity.text = "1 pc (100 - 200 grams)"
-                productPrice.text = "Php 15.00"
-                findViewById<Button>(R.id.addToCartButton).setOnClickListener{
-                    Toast.makeText(this, "Added To Cart", Toast.LENGTH_SHORT).show()
-                    addedToCart.add(position.toString())
-                }
+                productPrice.text = "15"
+                findViewById<SeekBar>(R.id.quantitySeekBar).setOnSeekBarChangeListener(object :
+                    SeekBar.OnSeekBarChangeListener {
+                    override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                        productQuantity.text = progress.toString().toInt().toString()
+
+                        val product_quantity = productQuantity.text.toString().toInt()
+                        val product_price = productPrice.text.toString().toInt()
+
+                        findViewById<Button>(R.id.addToCartButton).setOnClickListener{
+                            val cart = Cart(product_name = position, product_quantity = product_quantity, product_price = product_price)
+                            if (palenggoHandler.addItem(cart)) {
+                                Toast.makeText(applicationContext , "Added To Cart", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                    }
+                    override fun onStartTrackingTouch(seekBar: SeekBar?) {
+                    }
+                    override fun onStopTrackingTouch(seekBar: SeekBar?) {
+                    }
+                })
             }
             position.equals("Persimmon") -> {
                 productImage.setImageResource(R.drawable.persimmon2)
                 productName.text = position
                 productQuantity.text = "1 pc (100 - 200 grams)"
-                productPrice.text = "Php 20.00"
+                productPrice.text = "20"
                 findViewById<Button>(R.id.addToCartButton).setOnClickListener{
                     Toast.makeText(this, "Added To Cart", Toast.LENGTH_SHORT).show()
                     addedToCart.add(position.toString())
