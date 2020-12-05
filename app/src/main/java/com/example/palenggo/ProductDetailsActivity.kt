@@ -130,9 +130,89 @@ class ProductDetailsActivity : AppCompatActivity() {
                     addedToCart.add(position.toString())
                 }
             }
+// POULTRY SECTION
+            position.equals("Beef") ->{
+                productImage.setImageResource(R.drawable.beef2)
+                productName.text = position
+                productQuantity.text = "1/2 kg"
+                productPrice.text = "Php 80.00"
+                findViewById<Button>(R.id.addToCartButton).setOnClickListener{
+                    Toast.makeText(this, "Added To Cart", Toast.LENGTH_SHORT).show()
+                    addedToCart.add(position.toString())
+                }
+            }
+            position.equals("Chicken Drumstick") ->{
+                productImage.setImageResource(R.drawable.drumstick2)
+                productName.text = position
+                productQuantity.text = "1/2 kg"
+                productPrice.text = "Php 60.00"
+                findViewById<Button>(R.id.addToCartButton).setOnClickListener{
+                    Toast.makeText(this, "Added To Cart", Toast.LENGTH_SHORT).show()
+                    addedToCart.add(position.toString())
+                }
+            }
+            position.equals("Longganisa") ->{
+                productImage.setImageResource(R.drawable.longganisa2)
+                productName.text = position
+                productQuantity.text = "1/2 kg"
+                productPrice.text = "Php 50.00"
+                findViewById<Button>(R.id.addToCartButton).setOnClickListener{
+                    Toast.makeText(this, "Added To Cart", Toast.LENGTH_SHORT).show()
+                    addedToCart.add(position.toString())
+                }
+            }
+            position.equals("Pork Belly") ->{
+                productImage.setImageResource(R.drawable.porkbelly2)
+                productName.text = position
+                productQuantity.text = "1/2 kg"
+                productPrice.text = "Php 70.00"
+                findViewById<Button>(R.id.addToCartButton).setOnClickListener{
+                    Toast.makeText(this, "Added To Cart", Toast.LENGTH_SHORT).show()
+                    addedToCart.add(position.toString())
+                }
+            }
+            position.equals("Pork Loin") ->{
+                productImage.setImageResource(R.drawable.porkloin2)
+                productName.text = position
+                productQuantity.text = "1/2 kg"
+                productPrice.text = "Php 60.00"
+                findViewById<Button>(R.id.addToCartButton).setOnClickListener{
+                    Toast.makeText(this, "Added To Cart", Toast.LENGTH_SHORT).show()
+                    addedToCart.add(position.toString())
+                }
+            }
+            position.equals("Pork Sinigang") ->{
+                productImage.setImageResource(R.drawable.porksinigang2)
+                productName.text = position
+                productQuantity.text = "1/2 kg"
+                productPrice.text = "Php 80.00"
+                findViewById<Button>(R.id.addToCartButton).setOnClickListener{
+                    Toast.makeText(this, "Added To Cart", Toast.LENGTH_SHORT).show()
+                    addedToCart.add(position.toString())
+                }
+            }
+            position.equals("Whole Chicken") ->{
+                productImage.setImageResource(R.drawable.wholechicken2)
+                productName.text = position
+                productQuantity.text = "1 pc"
+                productPrice.text = "Php 90.00"
+                findViewById<Button>(R.id.addToCartButton).setOnClickListener{
+                    Toast.makeText(this, "Added To Cart", Toast.LENGTH_SHORT).show()
+                    addedToCart.add(position.toString())
+                }
+            }
+            position.equals("Chicken Wings") ->{
+                productImage.setImageResource(R.drawable.wings2)
+                productName.text = position
+                productQuantity.text = "1/2 kg"
+                productPrice.text = "Php 60.00"
+                findViewById<Button>(R.id.addToCartButton).setOnClickListener{
+                    Toast.makeText(this, "Added To Cart", Toast.LENGTH_SHORT).show()
+                    addedToCart.add(position.toString())
+                }
+            }
         }
 
-        Log.i("puta", "$addedToCart")
 
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "870436854253",
+    "project_id": "palenggo-8166f",
+    "storage_bucket": "palenggo-8166f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870436854253:android:eaaae1424ed2ddf39e6fe4",
+        "android_client_info": {
+          "package_name": "com.example.uielementsp2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "870436854253-c3i7mvq3go3eo5ple4nh9eitudojtb4d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMsnN1VbjMbJrW1BWNoBav5mP-qSXkH1w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "870436854253-c3i7mvq3go3eo5ple4nh9eitudojtb4d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

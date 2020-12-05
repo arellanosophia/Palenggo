@@ -74,6 +74,8 @@ class ProductListActivity : AppCompatActivity() {
                 true
             }
             R.id.go_to_recipes -> {
+                val intent = Intent(this , ViewRecipeListActivity::class.java)
+                startActivity(intent)
                 true
             }
             R.id.go_to_products -> {
@@ -82,6 +84,8 @@ class ProductListActivity : AppCompatActivity() {
                 true
             }
             R.id.go_to_bills -> {
+                val intent = Intent(this ,  PayBillsPage::class.java)
+                startActivity(intent)
                 true
             }
             else -> {
