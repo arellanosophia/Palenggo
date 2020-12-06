@@ -1,8 +1,6 @@
 package com.example.palenggo.handlers
 
-import com.example.palenggo.models.Bills
 import com.example.palenggo.models.Cart
-import com.example.palenggo.models.Checkout
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
@@ -41,6 +39,24 @@ class PalenggoHandler {
         bills.id = id
 
         utilityRef.child(id!!).setValue(bills)
+        return true
+    }
+
+//RECIPES FUNCTION
+    var addRecipe: DatabaseReference
+    init {
+        database = FirebaseDatabase.getInstance()
+        addRecipe = database.getReference("add_recipe")
+    }
+    fun addRecipes (recipes: Recipes): Boolean{
+        val id = addRecipe.push().key
+        recipes.id = id
+
+        addRecipe.child(id!!).setValue(recipes)
+        return true
+    }
+    fun updateRecipe(recipes: Recipes): Boolean {
+        addRecipe.child(recipes.id!!).setValue(recipes)
         return true
     }
 }

@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Palenggo">
+        <activity android:name=".PendingRecipeActivity"></activity>
+        <activity android:name=".addRecipesActivity" />
         <activity android:name=".UtilitiesActivity"></activity>
         <activity android:name=".PaidBillsActivity" />
         <activity android:name=".PayBillActivity" />
