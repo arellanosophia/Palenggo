@@ -4,10 +4,17 @@ import com.google.firebase.database.IgnoreExtraProperties
 
 @IgnoreExtraProperties
 
-class Cart(var id: String? = "", var product_name: String? = "", var product_quantity: Int = 0, var product_price: Int = 0 ) {
+class Cart(var id: String? = "", var product_name: String? = "", var product_quantity: Int = 0, var product_price: Int = 0 ) : Comparable<Cart>{
    override fun toString(): String {
        var total = product_price*product_quantity
-        return product_name.toString() + "      Price: $product_price    Quantity: $product_quantity            TOTAL: " + total
+        return product_name.toString() + "  Price: $product_price   Quantity: $product_quantity \nTOTAL: " + total
     }
 
+    override fun compareTo(other : Cart) : Int {
+        return if(this.product_price != other.product_price){
+            this.product_price - other.product_price
+        }else{
+            0
+        }
+    }
 }

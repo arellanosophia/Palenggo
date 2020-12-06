@@ -21,6 +21,7 @@ class CartActivity : AppCompatActivity() {
     lateinit var cartListView : ListView
     lateinit var checkOutButton : Button
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cart)
@@ -28,14 +29,15 @@ class CartActivity : AppCompatActivity() {
         palenggoHandler = PalenggoHandler()
         products = ArrayList()
         cartListView = findViewById(R.id.cartListView)
-        checkOutButton = findViewById(R.id.checkOutButton)
+
 
         registerForContextMenu(cartListView)
     }
     override fun onStart(){
         super.onStart()
-        palenggoHandler.addItemRef.addValueEventListener(object: ValueEventListener {
+        palenggoHandler.orders.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
+                products.clear()
                 snapshot.children.forEach{
                     val product = it.getValue(Cart::class.java)
                     products.add(product!!)
@@ -60,8 +62,6 @@ class CartActivity : AppCompatActivity() {
 
             R.id.remove_item -> {
                 if(palenggoHandler.deleteItem(products[info.position])){
-                    val intent = Intent(this, CartActivity::class.java)
-                    startActivity(intent)
                     Toast.makeText(applicationContext, "Item Deleted.", Toast.LENGTH_SHORT).show()
                 }
                 true
@@ -94,7 +94,7 @@ class CartActivity : AppCompatActivity() {
                 true
             }
             R.id.go_to_bills -> {
-                val intent = Intent(this ,  PayBillsPage::class.java)
+                val intent = Intent(this ,  PayBillActivity::class.java)
                 startActivity(intent)
                 true
             }

@@ -84,7 +84,7 @@ class ProductListActivity : AppCompatActivity() {
                 true
             }
             R.id.go_to_bills -> {
-                val intent = Intent(this ,  PayBillsPage::class.java)
+                val intent = Intent(this ,  PayBillActivity::class.java)
                 startActivity(intent)
                 true
             }

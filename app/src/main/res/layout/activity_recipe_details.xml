@@ -69,7 +69,7 @@
         android:layout_marginTop="27dp"
         android:text="@string/textView1"
         app:layout_constraintEnd_toStartOf="@+id/prepTime"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/bawadiImage"
         app:layout_constraintTop_toBottomOf="@+id/recipeDesc" />
 
     <TextView
@@ -118,7 +118,7 @@
         app:layout_constraintTop_toBottomOf="@+id/recipeDesc" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/bawadiImage"
         android:layout_width="35dp"
         android:layout_height="34dp"
         android:layout_marginStart="13dp"
@@ -166,7 +166,7 @@
         android:layout_marginEnd="1dp"
         app:layout_constraintEnd_toStartOf="@+id/totalTxt"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/bawadiImage"
         app:srcCompat="@drawable/ic_baseline_timelapse_24" />
 
     <TextView

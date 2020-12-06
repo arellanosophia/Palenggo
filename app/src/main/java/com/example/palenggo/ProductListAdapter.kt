@@ -38,7 +38,7 @@ internal class MainAdapter(
         if (convertView == null) {
             convertView = layoutInflater!!.inflate(R.layout.row_item, null)
         }
-        imageView = convertView!!.findViewById(R.id.imageView)
+        imageView = convertView!!.findViewById(R.id.benecoImage)
         textView = convertView.findViewById(R.id.textView)
         imageView.setImageResource(numberImage[position])
         textView.text = numbersInWords[position]

@@ -40,7 +40,7 @@ internal class AdapterProducts(
         if (convertView == null) {
             convertView = layoutInflater!!.inflate(R.layout.product_item, null)
         }
-        imageView = convertView!!.findViewById(R.id.imageView)
+        imageView = convertView!!.findViewById(R.id.benecoImage)
         textView = convertView.findViewById(R.id.textView)
         imageView.setImageResource(numberImage[position])
         textView.text = numbersInWords[position]

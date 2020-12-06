@@ -9,9 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Palenggo">
-        <activity android:name=".bawadiForm"></activity>
-        <activity android:name=".benecoForm" />
-        <activity android:name=".PayBillsPage" />
+        <activity android:name=".UtilitiesActivity"></activity>
+        <activity android:name=".PaidBillsActivity" />
+        <activity android:name=".PayBillActivity" />
         <activity android:name=".CartActivity" />
         <activity android:name=".ProductDetailsActivity" />
         <activity android:name=".ProductListActivity" />
