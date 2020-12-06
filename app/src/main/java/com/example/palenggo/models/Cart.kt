@@ -9,5 +9,4 @@ class Cart(var id: String? = "", var product_name: String? = "", var product_qua
        var total = product_price*product_quantity
         return product_name.toString() + "      Price: $product_price    Quantity: $product_quantity            TOTAL: " + total
     }
-
 }

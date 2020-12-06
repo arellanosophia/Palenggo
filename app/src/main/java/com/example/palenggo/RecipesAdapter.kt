@@ -9,11 +9,11 @@ import android.widget.ImageView
 import android.widget.TextView
 
 internal class RecipeAdapter(
-    private val context: Context,
-    private val numbersInWords: Array<String>,
-    private val numberImage: IntArray
+        private val context: Context,
+        private val numbersInWords: Array<String>,
+        private val numberImage: IntArray
 ) :
-    BaseAdapter() {
+        BaseAdapter() {
     private var layoutInflater: LayoutInflater? = null
     private lateinit var imageView: ImageView
     private lateinit var textView: TextView
@@ -27,14 +27,14 @@ internal class RecipeAdapter(
         return 0
     }
     override fun getView(
-        position: Int,
-        convertView: View?,
-        parent: ViewGroup
+            position: Int,
+            convertView: View?,
+            parent: ViewGroup
     ): View? {
         var convertView = convertView
         if (layoutInflater == null) {
             layoutInflater =
-                context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+                    context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         }
         if (convertView == null) {
             convertView = layoutInflater!!.inflate(R.layout.recipelist, null)
@@ -46,3 +46,6 @@ internal class RecipeAdapter(
         return convertView
     }
 }
+
+
+
