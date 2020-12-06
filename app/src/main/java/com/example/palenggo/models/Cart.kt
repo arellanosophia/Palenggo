@@ -10,11 +10,4 @@ class Cart(var id: String? = "", var product_name: String? = "", var product_qua
         return product_name.toString() + "      Price: $product_price    Quantity: $product_quantity            TOTAL: " + total
     }
 
-    override fun compareTo(other : Cart) : Int {
-        return if(this.product_price != other.product_price){
-            this.product_price - other.product_price
-        }else{
-            0
-        }
-    }
 }
